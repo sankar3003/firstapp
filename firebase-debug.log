@@ -1,0 +1,55 @@
+[debug] [2020-02-29T13:41:35.118Z] ----------------------------------------------------------------------
+[debug] [2020-02-29T13:41:35.121Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\SPCP285\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2020-02-29T13:41:35.121Z] CLI Version:   7.14.0
+[debug] [2020-02-29T13:41:35.121Z] Platform:      win32
+[debug] [2020-02-29T13:41:35.121Z] Node Version:  v12.15.0
+[debug] [2020-02-29T13:41:35.122Z] Time:          Sat Feb 29 2020 19:11:35 GMT+0530 (India Standard Time)
+[debug] [2020-02-29T13:41:35.122Z] ----------------------------------------------------------------------
+[debug] [2020-02-29T13:41:35.122Z] 
+[debug] [2020-02-29T13:41:35.132Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-02-29T13:41:35.133Z] > authorizing via signed-in user
+[debug] [2020-02-29T13:41:35.133Z] [iam] checking project firstapp-9f858 for permissions ["firebase.projects.get"]
+[debug] [2020-02-29T13:41:35.135Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/firstapp-9f858:testIamPermissions  
+
+[debug] [2020-02-29T13:41:36.653Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-29T13:41:36.657Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/firstapp-9f858  
+ 
+[debug] [2020-02-29T13:41:37.101Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'D:\angular1'...
+[info] 
+[debug] [2020-02-29T13:41:37.110Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/firstapp-9f858/webApps/-/config  
+ 
+[debug] [2020-02-29T13:41:38.060Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2020-02-29T13:43:16.889Z] ----------------------------------------------------------------------
+[debug] [2020-02-29T13:43:16.891Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\SPCP285\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting:target-name
+[debug] [2020-02-29T13:43:16.891Z] CLI Version:   7.14.0
+[debug] [2020-02-29T13:43:16.891Z] Platform:      win32
+[debug] [2020-02-29T13:43:16.892Z] Node Version:  v12.15.0
+[debug] [2020-02-29T13:43:16.893Z] Time:          Sat Feb 29 2020 19:13:16 GMT+0530 (India Standard Time)
+[debug] [2020-02-29T13:43:16.893Z] ----------------------------------------------------------------------
+[debug] [2020-02-29T13:43:16.893Z] 
+[debug] [2020-02-29T13:43:16.904Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-02-29T13:43:16.905Z] > authorizing via signed-in user
+[debug] [2020-02-29T13:43:16.905Z] [iam] checking project firstapp-9f858 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-02-29T13:43:16.908Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/firstapp-9f858:testIamPermissions  
+
+[debug] [2020-02-29T13:43:18.347Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-29T13:43:18.351Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/firstapp-9f858  
+ 
+[debug] [2020-02-29T13:43:18.697Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'firstapp-9f858'...
+[info] 
+[info] i  deploying hosting
+[info] 
+[info] +  Deploy complete!
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/firstapp-9f858/overview
+[debug] [2020-02-29T13:43:18.924Z] TypeError: Cannot read property 'deploys' of undefined
+    at C:\Users\SPCP285\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:84:36
+    at processTicksAndRejections (internal/process/task_queues.js:94:5)
+[error] 
+[error] Error: An unexpected error has occurred.

@@ -1,0 +1,53 @@
+
+
+<form acion="" [formGroup]="form" (submit)='submit()'>
+<div class="form-group">
+   <label for="">Company</label>
+   <input type="text" name='name' class="form-control" formControlName='name'>
+   
+   <div *ngIf='(form.get("name").invalid)' class="error">
+   <div class="error" *ngIf='form.get("name").errors && form.get("name").touched'>Name Required</div>
+   {{form.get('name').errors?.minlength | json}}
+   <div *ngIf="form.get('name').errors?.minlength" class="error">
+      Name must be at least 5 characters long.
+ </div> 
+   </div>
+</div>
+<!-- <div class="from-group">
+<label for="">Select</label>
+<input type="select" formControlName='gender' placeholder="select gender">
+</div> -->
+<div class="form-group">
+   <button type="button" class="btn btn-info" (click)='addproducts()'>
+      Add product</button></div>
+<div formArrayName="products" class="form-group col-12"  *ngFor="let pro of getControls(); let i = index;">
+   <div class="row" [formGroupName]='i'>
+      <div class="form-group col-2"><input formControlName="item" class="form-control" type="text" placeholder="Item item"></div>
+      <div class="form-group col-2"><input formControlName="price" class="form-control" type="number" placeholder="Item price"></div>
+      <div class="form-group col-2">
+       <input formControlName="description" class="form-control" type="text" placeholder="Item description">
+      </div>
+      <div class="form-group col-2">
+       <input formControlName="status" class="form-control" type="text" placeholder="Item status">
+      </div>
+      <div class="form-group col-2">
+      <button class="btn btn-danger" (click)="removeproduct(i)">Remove</button> </div>
+      
+   </div>
+
+</div>
+
+    
+    
+    
+    
+    
+ 
+<div class="form-group">
+   <button class="btn btn-success" type="submit">Submit</button>
+   <span><button class="btn btn-danger" type="reset" (click)='reset()'>Reset</button></span>
+</div>
+
+
+
+</form>

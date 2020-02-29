@@ -1,0 +1,126 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-header bg-success text-center p-0">
+                    <h4 class="bg-heading" class="color">{{name}}</h4>
+                </div>
+                <div class="card-body">
+                    <form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <!-- yor entered input value is {{val | titlecase}} <br>
+                            yor entered input value is {{val | lowercase}} <br>
+                            yor entered input value is {{val | uppercase}} <br>
+                            yor entered input value is {{val | json}} <br> -->
+                            <input type="text" class="form-control" formControlName="name">
+                            <span class="text-danger"
+                            *ngIf="(registerFormControl.name.touched ) && registerFormControl.name.errors?.required">
+                        Name is required
+                        </span>
+                        </div>
+                        <div class="form-group">
+                            <label>Age</label>
+                            <input type="text" class="form-control" formControlName="age">
+                            <span class="text-danger"
+                                *ngIf="(registerFormControl.age.touched ) && registerFormControl.age.errors?.required">
+                                Age is required
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="text" class="form-control" formControlName="email">
+                            <span class="text-danger"
+                                *ngIf="(registerFormControl.email.touched) && registerFormControl.email.errors?.required">
+                                Email is required
+                            </span>
+                            <span class="text-danger"
+                                *ngIf="registerFormControl.email.touched && registerFormControl.email.errors?.email">
+                                Enter a valid email address
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label>User Name</label>
+                            <input type="text" class="form-control" formControlName="username">
+                            <span class="text-danger"
+                                *ngIf="(registerFormControl.username.touched) && registerFormControl.username.errors?.required">
+                                User Name is required
+                            </span>
+                            <span class="text-danger"
+                                *ngIf="registerFormControl.username.touched && registerFormControl.username.errors?.userNameNotAvailable">
+                                User Name is not available
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            {{registerForm.get('password').touched | json}} ,{{registerForm.get('password').dirty | json }}
+                          <input type="password" class="form-control" formControlName="password">
+                            <span class="text-danger"
+                                *ngIf="(registerFormControl.password.touched ) && registerFormControl.password.errors?.required">
+                                Password is required
+                            </span>
+                            <span class="text-danger"
+                                *ngIf="registerFormControl.password.dirty && registerFormControl.password.errors">
+                                Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase
+                                letter and 1 number
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm Password</label>
+                            <input type="password" class="form-control" formControlName="confirmPassword">
+                            <span class="text-danger"
+                                *ngIf="(registerFormControl.confirmPassword.touched )&& registerFormControl.confirmPassword.errors?.required">
+                                Confirm Password is required
+                            </span>
+                            <span class="text-danger"
+                                *ngIf="registerFormControl.confirmPassword.touched && registerFormControl.confirmPassword.errors?.passwordMismatch">
+                                Passwords doesnot match
+                            </span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="button" class="btn btn-info" (click)='addproducts()'>
+                               Add address</button></div>
+                         <div formArrayName="addresses" class="form-group col-12"  *ngFor="let pro of getControls(); let i = index;">
+                            <div class="row" [formGroupName]='i'>
+                               <div class="form-group col-2"><input formControlName="address" class="form-control" type="text" placeholder="Address"></div>
+                               <div class="form-group col-2"><input formControlName="street" class="form-control" type="text" placeholder="street"></div>
+                               <div class="form-group col-2">
+                                <input formControlName="city" class="form-control" type="text" placeholder="City">
+                               </div>
+                               <div class="form-group col-2">
+                                <input formControlName="pincode" class="form-control" type="number" placeholder="Pin code">
+                               </div>
+                               <div class="form-group col-2">
+                               <button class="btn btn-danger" (click)="removeproduct(i)">Remove</button> </div>
+                               
+                            </div>
+                         
+                         </div>
+      
+      <h4 class="font-weight-bold bg-warning">Main Area</h4>
+    
+        <div formGroupName='mainArea'>
+<div class="form-group">
+<label >Main Address</label>
+<input type="text" formControlName='mainAddress' class="form-control">
+
+
+</div>
+<div class="form-group">
+<label for="">Main Name</label>
+    <input type="text" formControlName='mainName' class="form-control">
+   
+</div>       
+
+        
+      </div>
+           <div class="form-group">
+                            <button type="submit" class="btn btn-success">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
