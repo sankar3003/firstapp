@@ -27,7 +27,7 @@
     "@types/firebase": "^3.2.1",
     "bootstrap": "^4.4.1",
     "firebase": ">= 5.5.7 <8",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ng-zorro-antd": "^8.5.2",
     "on-change": "^1.6.4",
     "popper.js": "^1.16.1",
